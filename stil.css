@@ -3,7 +3,6 @@ body.light-mode {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  color: #ffffff;
 }
 
 nav {
@@ -35,6 +34,7 @@ header {
   margin: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: #ffffff;
 }
 
 footer {
@@ -52,6 +52,7 @@ table {
   margin-top: 20px;
   background-color: #fff;
   border: #333 dotted 3px;
+  color: #ccc;
 }
 
 table th, table td {
@@ -149,40 +150,45 @@ input, textarea {
 
 /* Responzivni dizajn za manje ekrane */
 @media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  table,
+  table thead,
+  table tbody,
+  table th,
+  table td,
+  table tr {
+    display: block;
+    width: 100%;
   }
 
-  nav a {
-    margin: 8px 0;
+  table {
+    overflow-x: hidden;
   }
 
-  header h1, header h2 {
-    font-size: 1.5em;
+  table thead {
+    display: none;
   }
 
-  .content {
-    margin: 10px;
-    padding: 15px;
+  table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #fff;
   }
 
-  .responzivna-tablica {
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
+  table td {
+    padding: 8px;
+    text-align: left;
+    position: relative;
+    width: 100%;
+  }
 
-.responzivna-tablica tr,
-.responzivna-tablica td {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-  img {
-    max-width: 100%;
-    height: auto;
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #007acc;
+    margin-bottom: 5px;
   }
 }
 
@@ -195,14 +201,7 @@ input, textarea {
     font-size: 1em;
   }
 
-.responzivna-tablica {
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-.responzivna-tablica tr,
-.responzivna-tablica td {
-  width: 100%;
-  box-sizing: border-box;
+  table th, table td {
+    padding: 6px;
+  }
 }
