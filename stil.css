@@ -47,36 +47,34 @@ footer {
   width: 100%;
 }
 
-table.attack-table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   background-color: #fff;
   border: #333 dotted 3px;
-  color: #333;
 }
 
-.attack-table th, .attack-table td {
+table th, table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
 
-.attack-table th {
+table th {
   background-color: #007acc;
   color: white;
 }
 
-.attack-table tr:nth-child(even) {
+table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-table caption{
+table caption {
   font-size: larger;
   font-weight: 600;
   padding: 10px 0;
 }
-
 /*
 DARK MODE
 */
