@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Povijest internetskih napada">
+    <meta name="author" content="Projekt">
+    <title>Povijest Internetskih Napada</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Početna</a>
+        <a href="#napadi">Poznati napadi</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <header>
+        <h1>Povijest Internetskih Napada</h1>
+        <h2>Pregled najpoznatijih cyber incidenata</h2>
+    </header>
+
+    <article class="content">
+
+        <button id="theme-toggle">DARK MODE</button>
+
+        <h3>Poznatiji internetski napadi kroz povijest</h3>
+        <img src="images/stuxnet.jpg" alt="Stuxnet ilustracija" width="100%">
+        <table class="attack-table" id="napadi">
+            <caption>Najznačajniji cyber napadi</caption>
+            <thead>
+                <tr>
+                    <th>Godina</th>
+                    <th>Naziv Napada</th>
+                    <th>Opis</th>
+                    <th>Utjecaj</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2010</td>
+                    <td>Stuxnet</td>
+                    <td>Ciljani napad na iranske nuklearne centrifuge.</td>
+                    <td>Prvi poznati digitalni sabotažni napad.</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>WannaCry</td>
+                    <td>Ransomware koji je zaključavao datoteke.</td>
+                    <td>Pogođeno preko 200.000 računala u 150 zemalja.</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>NotPetya</td>
+                    <td>Malware koji je oštetio podatke pod krinkom ransomwarea.</td>
+                    <td>Velike kompanije i vladine institucije pogođene.</td>
+                </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>SolarWinds</td>
+                    <td>Napad na lanac opskrbe kroz softverske nadogradnje.</td>
+                    <td>Kompromitirane brojne američke institucije.</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="images/solorigate.jpg" alt="SolarWinds napad" width="100%" style="margin-top:20px;">
+    </article>
+
+
+
+    <footer>
+        Projekt RDWS | 2025  
+
+    <button onclick="otvoriFormu()">Kontaktiraj nas</button>
+    <div id="overlay" onclick="zatvoriFormu()"></div>
+
+  <div id="kontakt" class="kontakt">
+    <form onsubmit="zatvoriFormu(); return false;">
+      <input type="text" placeholder="Ime" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Poruka" required></textarea>
+      <button type="submit">Pošalji</button>
+      <br>
+      <button type="button" onclick="zatvoriFormu()">Zatvori</button>
+    </form>
+    </footer>
+
+<script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        body.classList.add('light-mode');
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.replace('light-mode', 'dark-mode');
+                toggleButton.textContent = 'LIGHT MODE';
+            } else {
+                body.classList.replace('dark-mode', 'light-mode');
+                toggleButton.textContent = 'DARK MODE';
+            }
+        });
+
+    function otvoriFormu() {
+      document.getElementById('kontakt').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function zatvoriFormu() {
+      document.getElementById('kontakt').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+  </script>
+
+</body>
+</html>
