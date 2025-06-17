@@ -52,14 +52,14 @@ table {
   margin-top: 20px;
   background-color: #fff;
   border: #333 dotted 3px;
-  color: #ccc;
+  color: black;
 }
 
 table th, table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
-  color: #ccc;
+  color: black;
 }
 
 table th {
