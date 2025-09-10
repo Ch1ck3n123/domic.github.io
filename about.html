@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O projektu</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<div class="main">
+    <nav class="navbar">
+        <div class="logo">Domić</div>
+        <div class="hamburger">&#9776;</div>
+        <ul class="menu">
+            <li class="close-menu">×</li>
+            <li><a href="index.html">NASLOVNA STRANICA</a></li>
+            <li><a href="about.html">O NAMA</a></li>
+            <li><a href="service.html">VRSTE NAPADA</a></li>
+            <li><a href="#" id="contactBtn">KONTAKT</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>O <span>Projektu</span></h1>
+        <p class="par">
+            Ova stranica služi kao zapis poznatijih internetskih napada. Ukoliko mislite da smo zaboravili neki napad, <a href="mailto:marin.domic2@gmail.com" class="email-link">pošaljite nam e-mail</a>.
+        </p>
+    </main>
+</div>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pretplati se</h2>
+        <form>
+            <input type="email" placeholder="Unesi email">
+            <input type="text" placeholder="Ime">
+            <button>Pretplati se</button>
+        </form>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById("contactModal");
+const btn = document.getElementById("contactBtn");
+const span = document.querySelector(".modal-content .close");
+
+btn.addEventListener("click", e => {
+    e.preventDefault();
+    modal.style.display = "flex";
+});
+
+span.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
+
+// Hamburger menu
+const menu = document.querySelector('.menu');
+const hamburger = document.querySelector('.hamburger');
+const closeMenuBtn = document.querySelector('.menu .close-menu');
+
+hamburger.addEventListener('click', () => menu.classList.add('show'));
+closeMenuBtn.addEventListener('click', () => menu.classList.remove('show'));
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.remove('show')));
+</script>
+</body>
+</html>
