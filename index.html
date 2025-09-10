@@ -1,120 +1,115 @@
 
 <!DOCTYPE html>
 <html lang="hr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Povijest internetskih napada">
-    <meta name="author" content="Projekt">
-    <title>Domić-projekt</title>
+    <title>Povijest Internetskih Napada</title>
     <link rel="stylesheet" href="stil.css">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Početna</a>
-        <a href="#napadi">Poznati napadi</a>
-        <a href="#kontakt">Kontakt</a>
+<div class="main">
+    <nav class="navbar">
+        <div class="logo">Domić</div>
+        <div class="hamburger">&#9776;</div>
+        <ul class="menu">
+            <li class="close-menu">×</li>
+            <li><a href="index.html">NASLOVNA STRANICA</a></li>
+            <li><a href="about.html">O NAMA</a></li>
+            <li><a href="service.html">VRSTE NAPADA</a></li>
+            <li><a href="#" id="contactBtn">KONTAKT</a></li>
+        </ul>
     </nav>
 
-    <header>
-        <h1>Povijest Internetskih Napada</h1>
-        <h2>Pregled najpoznatijih cyber incidenata</h2>
-    </header>
+    <main class="content">
+        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80"
+             alt="Cyber Security" class="hero-img">
+        <h1>Povijest <span>Internetskih Napada</span></h1>
+        <p class="par">Ovo su poznatiji napadi kroz povijest</p>
 
-    <article class="content">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Godina</th>
+                        <th>Naziv Napada</th>
+                        <th>Opis</th>
+                        <th>Utjecaj</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2010</td>
+                        <td>Stuxnet</td>
+                        <td>Ciljani napad na iranske nuklearne centrifuge.</td>
+                        <td>Prvi poznati digitalni sabotažni napad.</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>WannaCry</td>
+                        <td>Ransomware koji je zaključavao datoteke.</td>
+                        <td>Pogođeno preko 200.000 računala u 150 zemalja.</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>NotPetya</td>
+                        <td>Malware koji je oštetio podatke pod krinkom ransomwarea.</td>
+                        <td>Velike kompanije i vladine institucije pogođene.</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>SolarWinds</td>
+                        <td>Napad na lanac opskrbe kroz softverske nadogradnje.</td>
+                        <td>Kompromitirane brojne američke institucije.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
 
-        <button id="theme-toggle">DARK MODE</button>
-
-        <h3>Poznatiji internetski napadi kroz povijest</h3>
-        <img src="images/stuxnet.jpg" alt="Stuxnet ilustracija" width="50%">
-        <table class="responzivna-tablica">
-            <caption>Najznačajniji cyber napadi</caption>
-            <thead>
-                <tr>
-                    <th>Godina</th>
-                    <th>Naziv Napada</th>
-                    <th>Opis</th>
-                    <th>Utjecaj</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-label="Godina">2010</td>
-                    <td data-label="Naziv Napada">Stuxnet</td>
-                    <td data-label="Opis">Ciljani napad na iranske nuklearne centrifuge.</td>
-                    <td data-label="Utjecaj">Prvi poznati digitalni sabotažni napad.</td>
-                </tr>
-                <tr>
-                    <td data-label="Godina">2017</td>
-                    <td data-label="Naziv Napada">WannaCry</td>
-                    <td data-label="Opis">Ransomware koji je zaključavao datoteke.</td>
-                    <td data-label="Utjecaj">Pogođeno preko 200.000 računala u 150 zemalja.</td>
-                </tr>
-                <tr>
-                    <td data-label="Godina">2017</td>
-                    <td data-label="Naziv Napada">NotPetya</td>
-                    <td data-label="Opis">Malware koji je oštetio podatke pod krinkom ransomwarea.</td>
-                    <td data-label="Utjecaj">Velike kompanije i vladine institucije pogođene.</td>
-                </tr>
-                <tr>
-                    <td data-label="Godina">2020</td>
-                    <td data-label="Naziv Napada">SolarWinds</td>
-                    <td data-label="Opis">Napad na lanac opskrbe kroz softverske nadogradnje.</td>
-                    <td data-label="Utjecaj">Kompromitirane brojne američke institucije.</td>
-                </tr>
-            </tbody>
-        </table>
-        <img src="images/solorigate.jpg" alt="SolarWinds napad" width="50%" style="margin-top:20px;">
-    </article>
-
-
-
-    <footer>
-        Projekt RDWS | 2025  
-
-    <button onclick="otvoriFormu()">Kontaktiraj nas</button>
-    <div id="overlay" onclick="zatvoriFormu()"></div>
-
-  <div id="kontakt" class="kontakt">
-    <form onsubmit="zatvoriFormu(); return false;">
-      <input type="text" placeholder="Ime" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Poruka" required></textarea>
-      <button type="submit">Pošalji</button>
-      <br>
-      <button type="button" onclick="zatvoriFormu()">Zatvori</button>
-    </form>
-    </footer>
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pretplati se</h2>
+        <form>
+            <input type="email" placeholder="Unesi email">
+            <input type="text" placeholder="Ime">
+            <button>Pretplati se</button>
+        </form>
+    </div>
+</div>
 
 <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
+const modal = document.getElementById("contactModal");
+const btn = document.getElementById("contactBtn");
+const span = document.querySelector(".modal-content .close");
 
-        body.classList.add('light-mode');
+btn.addEventListener("click", e => {
+    e.preventDefault();
+    modal.style.display = "flex";
+});
 
-        toggleButton.addEventListener('click', () => {
-            if (body.classList.contains('light-mode')) {
-                body.classList.replace('light-mode', 'dark-mode');
-                toggleButton.textContent = 'LIGHT MODE';
-            } else {
-                body.classList.replace('dark-mode', 'light-mode');
-                toggleButton.textContent = 'DARK MODE';
-            }
-        });
+span.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 
-    function otvoriFormu() {
-      document.getElementById('kontakt').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
+window.addEventListener("click", e => {
+    if (e.target === modal) modal.style.display = "none";
+});
 
-    function zatvoriFormu() {
-      document.getElementById('kontakt').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
+// Hamburger menu
+const menu = document.querySelector('.menu');
+const hamburger = document.querySelector('.hamburger');
+const closeMenuBtn = document.querySelector('.menu .close-menu');
 
-  </script>
-
+hamburger.addEventListener('click', () => menu.classList.add('show'));
+closeMenuBtn.addEventListener('click', () => menu.classList.remove('show'));
+menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => menu.classList.remove('show'));
+});
+</script>
+</body>
+</html>
 </body>
 </html>
